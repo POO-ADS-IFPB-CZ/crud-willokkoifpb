@@ -3,24 +3,17 @@ package model;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Representa um produto com código, descrição e preço.
- * Implementa Serializable para permitir que objetos desta classe sejam gravados em arquivo.
- */
 public class Produto implements Serializable {
-
-    // Garante compatibilidade entre diferentes versões da classe ao serializar.
+    
     private static final long serialVersionUID = 1L;
 
     private int codigo;
     private String descricao;
     private double preco;
 
-    // Construtor padrão (necessário para algumas operações)
     public Produto() {
     }
 
-    // Construtor com todos os campos
     public Produto(int codigo, String descricao, double preco) {
         this.codigo = codigo;
         this.descricao = descricao;
@@ -52,19 +45,11 @@ public class Produto implements Serializable {
         this.preco = preco;
     }
 
-    /**
-     * O método hashCode é baseado apenas no 'codigo',
-     * pois ele é o identificador único do produto.
-     */
     @Override
     public int hashCode() {
         return Objects.hash(codigo);
     }
 
-    /**
-     * O método equals compara dois produtos com base apenas no 'codigo'.
-     * Dois produtos são considerados iguais se tiverem o mesmo código.
-     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
